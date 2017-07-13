@@ -3,8 +3,10 @@ body{
 }
 
 .container{
-margin: 10% auto;
+width: 80px;
 text-align: center;
+display: relative;
+left: 0px;
 }
 
 .box {
