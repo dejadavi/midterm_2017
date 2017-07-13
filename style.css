@@ -1,8 +1,26 @@
+body{
+    background-color: black;
+}
+
+.container{
+margin: 10% auto;
+text-align: center;
+}
+
 .box {
-    float:left;
-    width:100px;
-    height:100px;
-    margin-right:5px;
-    margin-bottom:5px;
+    display: inline-block;
+    margin: 0 auto;
+    width:20px;
+    height:30px;
+    margin:1px;
     background-color:#0000FF;
+}
+
+.blackout {
+    display: inline-block;
+    margin: 0 auto;
+    width:20px;
+    height:30px;
+    margin:1px;
+    background-color:black;
 }
