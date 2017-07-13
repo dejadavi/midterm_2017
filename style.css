@@ -1,0 +1,32 @@
+body{
+    background-color: #F7F39A;
+}
+
+.container{
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.box {
+    display: inline-block;
+    margin: 0 auto;
+    width:50px;
+    height:60px;
+    margin:1px;
+    background-color: #A3DE83;
+    border-radius: 8px;
+}
+
+.box:hover {
+    background-color: #38817A;
+}
+
+.blackout {
+    display: inline-block;
+    margin: 0 auto;
+    width:20px;
+    height:30px;
+    margin:1px;
+    background-color:#F7F39A;
+}
