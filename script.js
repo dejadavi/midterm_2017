@@ -76,7 +76,7 @@ initialize(6,17);
     $('.box').on('click', function (){
      $(this).toggleClass('reserve');
         console.log($(this).attr("id"));
-        $('#seat').append($(this).attr("id") + ", ");
+        $('#seat').append($(this).attr("id") + " ");
         
     });
     
