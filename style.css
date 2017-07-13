@@ -6,13 +6,15 @@ body{
     margin: 0 auto;
     margin-top: 100px;
     text-align: center;
+    display: block;
+
 }
 
 .box {
     display: inline-block;
     margin: 0 auto;
-    width:50px;
-    height:60px;
+    width:40px;
+    height:50px;
     margin:1px;
     background-color: #A3DE83;
     border-radius: 8px;
@@ -29,4 +31,8 @@ body{
     height:30px;
     margin:1px;
     background-color:#F7F39A;
+}
+
+.reserve {
+    background-color: white;
 }

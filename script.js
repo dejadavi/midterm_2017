@@ -37,6 +37,10 @@ for(var row = 0; row < nRow; row++) {
    
 
 }
+    
+
+    
+    
 ////Add letters, append to id and display
 $container.appendTo($("body"));
 
@@ -69,7 +73,14 @@ initialize(6,17);
 
 // }
 
-
+    $('.box').on('click', function (){
+     $(this).toggleClass('reserve');
+        console.log($(this).attr("id"));
+        $('#seat').append($(this).attr("id") + ", ");
+        
+    });
+    
+    
 
 
 
