@@ -6,10 +6,10 @@ $(document).ready(function () {
 
         var $container = $("<div></div>").addClass("container");
         var blackOut = [
-    "1,0", "1,15"
-    , "2,0", "2,15"
-    , "3,0", "3,1", "3,14", "3,15"
-];
+            "1,0", "1,15"
+            , "2,0", "2,15"
+            , "3,0", "3,1", "3,14", "3,15"
+        ];
 
         for (var row = 0; row < nRow; row++) {
 
@@ -107,21 +107,6 @@ $(document).ready(function () {
 
 
     console.log(array01);
-    
-    
-// added button
-    $('#button').on('click', function(){
-        console.log($(this));
-        console.log($('.box .reserve'));
-        $('.box').forEach(function (){
-            var arrayPOS = array01.indexOf($(this).attr("id"));
-            if (array01.indexOf($(this).attr("id")) != -1){
-                $(this).addClass('purchased');
-                console.log($(this));
-            };
-        });
-    });
-    
-    
+
 
 });
