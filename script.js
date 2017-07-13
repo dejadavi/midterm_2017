@@ -81,11 +81,7 @@ $container.appendTo($("body"));
 
 function addId(row, col){
 
-<<<<<<< HEAD
     $(".box").attr("id",row+col).text(row+col);
-=======
-$(".box").attr("id",row+col).text(row+col);
->>>>>>> da5ae8ce56ef2b33fdce1750d9e615cd443a1515
 
 }
 
