@@ -39,12 +39,39 @@ body{
 
 
 .booking-details {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
     background-color: #F7F39A;
     position: fixed;
     right: 20px;
     padding: 10px;
     width: 200px;
     height: auto;
-    margin: 0px;
+    margin-top: -80px;
+    border-left: 1px solid #346473;
+    word-wrap:break-word;
+
+
+
+}
+
+#bookTitle {
+    font-family: 'Raleway', sans-serif;
+    color: #346473;
+    font-size: 24px;
+
+}
+
+#nameInput {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    display: inline-block;
+    width: 70%;
+    height: 24px;
+    line-height: 18px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 0px solid #346473;
 
 }

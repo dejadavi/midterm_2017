@@ -87,23 +87,41 @@ $(document).ready(function () {
     $('.box').on('click', function () {
         $(this).toggleClass('reserve');
         console.log($(this).attr("id"));
-        $('#seat').append(array01.indexOf($(this).attr("id")));
-        
-        if (array01.indexOf($(this).attr("id")) === -1) {
+
+        var arId = array01.indexOf($(this).attr('id'));
+
+        if (arId === -1) {
 
             array01.push($(this).attr('id'));
 
         } else {
-            array01.indexOf($(this).attr("id"));
-            array01.splice(array01.indexOf($(this).attr("id"), 1));
-            console.log(array01);
+
+            array01.splice(arId, 1);
+            console.log(arId);
 
         }
+        $('#seat').text("Seats: " + array01);
+
     });
 
 
 
     console.log(array01);
-
+    
+    
+// added button
+    $('#button').on('click', function(){
+        console.log($(this));
+        console.log($('.box .reserve'));
+        $('.box').forEach(function (){
+            var arrayPOS = array01.indexOf($(this).attr("id"));
+            if (array01.indexOf($(this).attr("id")) != -1){
+                $(this).addClass('purchased');
+                console.log($(this));
+            };
+        });
+    });
+    
+    
 
 });

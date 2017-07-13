@@ -12,12 +12,17 @@
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="script.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Raleway');
+        </style>
     </head>
     <body>
         <div class="booking-details">
-            <h1>Booking Details</h1>
+            <h1 id="bookTitle">Booking Details</h1>
+            <p id="userName">Name: <input type="text" id="nameInput" value="" placeholder="Enter your name" onfocus="if(this.placeholder=='Enter your name') this.placeholder='';" onblur="if(this.placeholder=='') this.placeholder='Enter your name'"></p>
             <p id="seat">Seats: </p><div></div>
-            <p>Total: </p><div></div>
+            <p>Total: </p>
+            <button type="button" id="button">Checkout</button><div></div>
         </div>
         <div id="seat"></div>
     </body>
