@@ -1,25 +1,32 @@
 body{
-    background-color: #F7F39A;
+    /*background-color: #F7F39A;*/
+    background: url(blackpopcornbackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container{
     margin: 0 auto;
     margin-top: 100px;
     text-align: center;
+    display: block;
+
 }
 
 .box {
     display: inline-block;
     margin: 0 auto;
-    width:30px;
+    width:40px;
     height:50px;
     margin:1px;
-    background-color: #A3DE83;
+    /*background-color: #A3DE83;*/
+    background-color: white;
     border-radius: 8px;
 }
 
 .box:hover {
-    background-color: #38817A;
+    /*background-color: #38817A;*/
+    background-color: tan;
 }
 
 .blackout {
@@ -28,15 +35,51 @@ body{
     width:20px;
     height:30px;
     margin:1px;
-    background-color:#F7F39A;
+    /*background-color:#F7F39A;*/
+    background-color: black;
 }
 
+.reserve {
+    background-color: red;
+}
+
+
 .booking-details {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    /*background-color: #F7F39A;*/
     background-color: white;
     position: fixed;
-    right: 20px;
+    right: 30px;
     padding: 10px;
-    width: auto;
+    width: 250px;
     height: auto;
+    margin-top: -80px;
+    border-left: 1px solid #346473;
+    word-wrap:break-word;
+
+
+
+}
+
+#bookTitle {
+    font-family: 'Raleway', sans-serif;
+    /*color: #346473;*/
+    color: red;
+    font-size: 24px;
+
+}
+
+#nameInput {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    display: inline-block;
+    width: 70%;
+    height: 24px;
+    line-height: 18px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 0px solid #346473;
 
 }
