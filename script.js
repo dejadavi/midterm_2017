@@ -1,6 +1,9 @@
 $(document).ready(function () {
 
-    ////Set up initial data array on backend
+   var cartArray = [];
+   var total=0;
+   var seats=0;
+
     //populate DOM
     function initialize(nRow, nCol) {
 
@@ -11,6 +14,16 @@ $(document).ready(function () {
             , "3,0", "3,1", "3,14", "3,15"
         ];
 
+        var priceByRow={
+            A:[10.99,"$"],
+            B:[10.99,"$"],
+            C:[12.99,"$$"],
+            D:[12.99,"$$"],
+            E:[15.99,"$$$"],
+            F:[15.99,"$$$"],
+            G:[11.99, "$$"]  
+        };
+
         for (var row = 0; row < nRow; row++) {
 
             var $row = $("<div></div>");
@@ -20,93 +33,82 @@ $(document).ready(function () {
                     if (blackOut.indexOf(row + "," + col) != -1 || row === 4) {
                         return "blackout"
                     } else {
-
-                        $(this).attr("id", (String.fromCharCode(nRow - row + 96) + col).toUpperCase());
+                        var letter=String.fromCharCode(nRow - row + 96).toUpperCase();
+                        $(this).attr("id", letter+col);
+                        $(this).data("price", priceByRow[letter])[0];
+                        $(this).data("priceIcon", priceByRow[letter])[1];
+                        $(this).data("counter", 1);
+                        $(this).text(priceByRow[letter][1]);
+                        //console.log($(this).data("price")[0]);
+                     
 
                         return "box"
                     }
 
                 }).appendTo($row);
 
-
-
             }
             $("<div></div>").css("clear", "both").appendTo($row);
 
             $row.prependTo($container);
-
-
-
         }
-
-
-
-
         ////Add letters, append to id and display
         $container.appendTo($("body"));
-
-
-    }
-
-
-    function addId(row, col) {
-
-        $(".box").attr("id", row + col).text(row + col);
-
     }
 
     initialize(6, 17);
 
-    // function populateDOM(args){
-
-
-    // }
-
-
-    // ///on click, function checks if seat reserved
-    // ///if reserved, fire message
-    // ////if not, trigger reserve modal
-    // function reserve {
-
-
-
-
-
-    // }
-
-
-    var array01 = [];
-    array01.splice(0, 0);
-    console.log(array01);
-
-
-
-
-
-
     $('.box').on('click', function () {
+   
         $(this).toggleClass('reserve');
-        console.log($(this).attr("id"));
-
-        var arId = array01.indexOf($(this).attr('id'));
-
+        
+        var arId = cartArray.indexOf($(this).attr('id'));
+        
         if (arId === -1) {
 
-            array01.push($(this).attr('id'));
+            cartArray.push($(this).attr('id'));
+            total+=parseFloat($(this).data("price"));
+            $("#total").text("Total: $"+total);
 
         } else {
 
-            array01.splice(arId, 1);
-            console.log(arId);
+            cartArray.splice(arId, 1);
+            total-=parseFloat($(this).data("price"));
+            $("#total").text("Total: $"+total);
 
         }
-        $('#seat').text("Seats: " + array01);
+        $('#seat').text("Seats: " + cartArray.sort());
+        
 
     });
 
+    $("#nameInput").on("input", function(){
+        $("button").prop("disabled",false);
+
+    })
+
+    ////Total up
+    $("#checkout").on('click',function(){
+
+      var $name=$('#nameInput').val();
+     
+        $(".box.reserve").each(function(){
+            $(this).addClass("purchased").removeClass("reserve");
+            $(this).data("name", $name);
+            $("#total").text("Total: $0.00");
+            $("#seat").text("");
+            $("#nameInput").val("").attr("placeholder","Enter your name");
+
+           // count+=$(this).data("counter");
+
+            ///console.log($(this).data('name'))
+        })
 
 
-    console.log(array01);
+        
+        //$("#seats").text("Seats:"+seats);
 
-
+    })
+   
+////end script
 });

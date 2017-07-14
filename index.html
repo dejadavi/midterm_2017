@@ -17,13 +17,14 @@
         </style>
     </head>
     <body>
-        <div class="booking-details">
+        <form class="booking-details">
             <h1 id="bookTitle">Booking Details</h1>
-            <p id="userName">Name: <input type="text" id="nameInput" value="" placeholder="Enter your name" onfocus="if(this.placeholder=='Enter your name') this.placeholder='';" onblur="if(this.placeholder=='') this.placeholder='Enter your name'"></p>
-            <p id="seat">Seats: </p><div></div>
-            <p>Total: </p>
-            <button type="button">Checkout</button><div></div>
-        </div>
-        <div id="seat"></div>
+            <p >Name: <input type="text" id="nameInput" value="" placeholder="Enter your name" 
+                onfocus="if(this.placeholder=='Enter your name') this.placeholder='';" 
+                onblur="if(this.placeholder=='') this.placeholder='Enter your name'"></p>
+            <p id="seat"> </p>
+            <p id="total">Total:$0.00 </p>
+            <button type="button" id="checkout" disabled="true">Checkout</button>
+        </form>
     </body>
 </html>

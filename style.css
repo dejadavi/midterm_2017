@@ -7,6 +7,8 @@ body{
     margin-top: 100px;
     text-align: center;
     display: block;
+    overflow: scroll;
+
 
 }
 
@@ -18,6 +20,11 @@ body{
     margin:1px;
     background-color: #A3DE83;
     border-radius: 8px;
+    font-family: arial;
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+   
 }
 
 .box:hover {
@@ -73,5 +80,11 @@ body{
     outline: 0;
     background: transparent;
     border-bottom: 0px solid #346473;
+
+}
+
+.box.purchased{
+    background-color: grey;
+    opacity: .4;
 
 }
