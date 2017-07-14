@@ -58,7 +58,7 @@ $(document).ready(function () {
 
     initialize(6, 17);
 
-    $(".box").not($(".purchased")).on('click', function () {
+    $(".box").on('click', function () {
     
         if($(this).hasClass("purchased")){
             return;
