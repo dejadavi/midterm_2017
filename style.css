@@ -1,8 +1,10 @@
 body{
     /*background-color: #F7F39A;*/
-    background: url(blackpopcornbackground.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url(tumblr_nsgqgiSSXw1t7cmmpo1_1280.png);
+    /*background-size: cover;*/
+    -webkit-background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 .container{
@@ -10,7 +12,6 @@ body{
     margin-top: 100px;
     text-align: center;
     display: block;
-
 }
 
 .box {
@@ -22,6 +23,7 @@ body{
     /*background-color: #A3DE83;*/
     background-color: white;
     border-radius: 8px;
+    border: 2px solid black;
 }
 
 .box:hover {
@@ -36,13 +38,23 @@ body{
     height:30px;
     margin:1px;
     /*background-color:#F7F39A;*/
-    background-color: black;
+    /*background-color: black;*/
+    color: #59d6e3;
 }
 
 .reserve {
     background-color: red;
 }
 
+#screen {
+  margin: 0 auto;
+  background-color: lightgray;
+  top: 20px;
+  border: black;
+  width: 400px;
+  text-align: center;
+  padding: 5px;
+}
 
 .booking-details {
     font-family: 'Raleway', sans-serif;
@@ -57,9 +69,6 @@ body{
     margin-top: -80px;
     border-left: 1px solid #346473;
     word-wrap:break-word;
-
-
-
 }
 
 #bookTitle {
@@ -67,7 +76,6 @@ body{
     /*color: #346473;*/
     color: red;
     font-size: 24px;
-
 }
 
 #nameInput {
@@ -81,5 +89,8 @@ body{
     outline: 0;
     background: transparent;
     border-bottom: 0px solid #346473;
-
+}
+.box.purchased{
+    background-color: grey;
+    opacity: .4;
 }
