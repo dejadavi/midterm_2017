@@ -1,8 +1,12 @@
 $(document).ready(function () {
 
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
    var cartArray = [];
-   var total=0;
-   var seats=0;
+   var total= new Big(0.00);
+   var seats= new Big(0.00);
 
     //populate DOM
     function initialize(nRow, nCol) {
@@ -15,13 +19,13 @@ $(document).ready(function () {
         ];
 
         var priceByRow={
-            A:[10.99,"$"],
-            B:[10.99,"$"],
-            C:[12.99,"$$"],
-            D:[12.99,"$$"],
-            E:[15.99,"$$$"],
-            F:[15.99,"$$$"],
-            G:[11.99, "$$"]  
+            A:[10,"$"],
+            B:[10,"$"],
+            C:[12,"$$"],
+            D:[12,"$$"],
+            E:[15,"$$$"],
+            F:[15,"$$$"],
+            G:[11, "$$"]  
         };
 
         for (var row = 0; row < nRow; row++) {
@@ -35,6 +39,8 @@ $(document).ready(function () {
                     } else {
                         var letter=String.fromCharCode(nRow - row + 96).toUpperCase();
                         $(this).attr("id", letter+col);
+                        $(this).attr("data-toggle","tooltip");
+                        $(this).attr("title","Open"+", $"+priceByRow[letter][0]+".00");
                         $(this).data("price", priceByRow[letter])[0];
                         $(this).data("priceIcon", priceByRow[letter])[1];
                         $(this).data("counter", 1);
@@ -59,29 +65,34 @@ $(document).ready(function () {
     initialize(6, 17);
 
     $(".box").on('click', function () {
+        
+       
     
         if($(this).hasClass("purchased")){
             return;
         } ;
+
+        var arId = cartArray.indexOf($(this).attr('id'));
         
         $(this).toggleClass('reserve');
        
-        var arId = cartArray.indexOf($(this).attr('id'));
         
         if (arId === -1) {
 
             cartArray.push($(this).attr('id'));
-            total+=parseFloat($(this).data("price"));
+            total=total.plus(parseInt($(this).data("price")));
+            console.log(total);
             $("#total").text("Total: $"+total);
 
-        } else {
+        } else if (arId>-1) {
 
             cartArray.splice(arId, 1);
-            total-=parseFloat($(this).data("price"));
+            total=total.minus(parseInt($(this).data("price")));
+            console.log(total);
             $("#total").text("Total: $"+total);
 
         }
-        $('#seat').text("Seats: " + cartArray.sort());
+        $('#seat').text("Seats: " + cartArray);
         
 
     });
@@ -102,18 +113,34 @@ $(document).ready(function () {
             $("#total").text("Total: $0.00");
             $("#seat").text("");
             $("#nameInput").val("").attr("placeholder","Enter your name");
-            cartArray = [];
+            $(this).attr("title", "Booked by "+$name).tooltip('fixTitle').tooltip('show');
+            
+           
 
            // count+=$(this).data("counter");
 
             ///console.log($(this).data('name'))
         })
-
+         cartArray = [];
+         total=Big(0.00);
+         
 
         
         //$("#seats").text("Seats:"+seats);
 
     })
-   
+
+
+    // $(".box").tooltip({
+    // content: "Awesome title!"
+    // });
+    $('.box').tooltip({
+        title: "ayeee"
+    });
+
+//     $("#A1").tooltip({
+//     items: "span",
+//     content: "Awesome title!"
+// }).tooltip("open");
 ////end script
 });

@@ -6,8 +6,9 @@ body{
     margin: 0 auto;
     margin-top: 100px;
     text-align: center;
-    display: block;
-    overflow: scroll;
+    min-width: 100px;
+    white-space: nowrap;
+  
 
 
 }
@@ -24,6 +25,7 @@ body{
     font-size: 11px;
     text-align: center;
     vertical-align: middle;
+  
    
 }
 
@@ -88,3 +90,4 @@ body{
     opacity: .4;
 
 }
+
