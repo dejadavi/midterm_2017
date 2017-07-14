@@ -58,10 +58,14 @@ $(document).ready(function () {
 
     initialize(6, 17);
 
-    $('.box').on('click', function () {
-   
-        $(this).toggleClass('reserve');
+    $(".box").not($(".purchased")).on('click', function () {
+    
+        if($(this).hasClass("purchased")){
+            return;
+        } ;
         
+        $(this).toggleClass('reserve');
+       
         var arId = cartArray.indexOf($(this).attr('id'));
         
         if (arId === -1) {
@@ -98,6 +102,7 @@ $(document).ready(function () {
             $("#total").text("Total: $0.00");
             $("#seat").text("");
             $("#nameInput").val("").attr("placeholder","Enter your name");
+            cartArray = [];
 
            // count+=$(this).data("counter");
 
