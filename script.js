@@ -40,7 +40,7 @@ $(document).ready(function () {
                         var letter=String.fromCharCode(nRow - row + 96).toUpperCase();
                         $(this).attr("id", letter+col);
                         $(this).attr("data-toggle","tooltip");
-                        $(this).attr("title","Open"+", $"+priceByRow[letter][0]+".00");
+                        $(this).attr("title","Open"+", "+priceByRow[letter][0]+".00");
                         $(this).data("price", priceByRow[letter])[0];
                         $(this).data("priceIcon", priceByRow[letter])[1];
                         $(this).data("counter", 1);
